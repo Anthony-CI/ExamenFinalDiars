@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    //INDEX CREAR
+}
+
+    <div class="container">
+
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <a class="btn btn-primary" href="/Nota/crear">Crear Nota</a>
+
+            </div>
+            <div class="btn-group mr-2" role="group" aria-label="Second group">
+                <a class="btn btn-primary" href="/Search/">Buscar Nota</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+@foreach (var item in ViewBag.posts)
+{
+    <div class="card">
+
+        <div class="card">
+
+            <div class="card-body">
+                <h3 class="card-header">@item.Titulo</h3>
+            </div>
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="card-body">
+
+                <p class="card-text">@item.Contenido.Substring(0,50)...</p>
+
+            </div>
+        </div>
+
+        <div class="card">
+
+            <div class="card-body">
+                <h3 class="card-header">@item.Fecha</h3>
+            </div>
+        </div>
+        <div>
+            <a href="/Nota/EliminarNota?IdEliminar=@item.Id"> Eliminar Nota</a>
+
+        </div>
+    </div>
+}
+

@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "VerDetalle";
+}
+
+@foreach (var item in ViewBag.posts)
+{
+    <div class="card">
+        <h3 class="card-header">@item.Titulo</h3>
+        <div class="card-body">
+
+            <p class="card-text">@item.Contenido</p>
+            <h6 class="card-title">@item.Fecha</h6>
+        </div>
+    </div>
+}
+

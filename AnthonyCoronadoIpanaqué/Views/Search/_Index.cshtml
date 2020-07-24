@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "_Index";
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <div class="card">
+        <h3 class="card-header"><a class="btn btn-secondary" href="/Nota/VerDetalle?id=@item.Id">@item.Titulo</a></h3>
+    </div>
+}
+<hr />
+<strong>Tags</strong>
+<hr />
+@foreach (var item in ViewBag.que)
+{
+    <div class="card">
+        <a style="margin:5px" class="bg-light">@item.Nombre </a>
+    </div>
+}
+

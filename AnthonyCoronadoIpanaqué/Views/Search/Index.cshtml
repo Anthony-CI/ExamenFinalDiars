@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<script>
+    $(document).ready(function (e) {
+        $.get("/Search/_Index?busqueda=" + $("#busqueda").val(), function (respuesta) {
+            $("#tbody").html(respuesta);
+        });
+        e.preventDefault();
+    });
+</script>
+
+<h1>Buscar</h1>
+<input id="busqueda" name="busqueda" />
+<button class="btn btn-primary" id="btn">Busca</button>
+
+
+<div id="tbody">
+
+</div>
+<script>
+    $("#busqueda").keyup(function (e) {
+        $.get("/Search/_Index?busqueda=" + $("#busqueda").val(), function (respuesta) {
+            $("#tbody").html(respuesta);
+        });
+        e.preventDefault();
+    });
+</script>
+
